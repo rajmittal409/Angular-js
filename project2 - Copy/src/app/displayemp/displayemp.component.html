@@ -1,0 +1,18 @@
+<table border="2" cellspacing="4" cellpadding="2" width="400" height="200">
+    <tr width="100" bgcolor="silver">
+        <th>Name</th>
+        <th>Emp No.</th>
+        <th>Gender</th>
+        <th>Employee Position</th>
+        <th colspan="2">Contacts</th>
+
+        
+    </tr>
+
+    <tr *ngFor="let employees of emps">
+        <td>{{employees.dptId}}</td>
+        <td>{{employees.dptName}}</td>
+ <td ><button>delete</button></td>
+     
+    </tr>
+    </table>

@@ -1,0 +1,46 @@
+<p>newemployee works!</p>
+ <button (click)="check1()">Hide</button>
+ <button (click)="check()">Show</button>
+ <div *ngIf="!flag">
+ 
+ <table border="2" cellspacing="4" cellpadding="2" width="400" height="200">
+            <tr width="100" bgcolor="silver">
+                <th>Name</th>
+                <th>Emp No.</th>
+                <th>Gender</th>
+                <th>Employee Position</th>
+                <th colspan="2">Contacts</th>
+    
+                
+            </tr>
+        
+            <tr *ngFor="let employees of employee">
+                <td>{{employees.empName|uppercase|userpipe1:employees.gender}}</td>
+                <td>{{employees.empNo}}</td>
+                <td appDirective1>{{employees.gender}}</td>
+                <td>{{employees.empNo|empposition}}</td>
+                <td *ngFor ="let con of employees.ph">{{con}}</td>
+            </tr>
+ 
+            <tr >
+                    <td>{{employee2.first|lowercase|userpipe1:employee2.gender:employee2.empName}}</td>
+                    <td>{{employee2.last|uppercase}}</td>
+                    <td>{{employee2.gender|slice:2:5}}</td>
+                    
+                    <td>{{employee2.price|currency:USD}}</td>
+                </tr>
+        </table>
+        <input type="text" name="t1">
+        <button (click)="del()">delete</button>
+ 
+</div>
+<table><tr><td> firstName</td><td><input type="text" [(ngModel)]="employee2.first"></td></tr>
+    <tr><td>Last Name</td><td><input type="text" [(ngModel)]="employee2.last"></td></tr>
+    <tr><td>Gender</td><td><input type="text" [(ngModel)]="employee2.gender"></td></tr></table>
+    <b>{{ 454.78787814 | number: '4.7-10' }}</b> <br>
+    <b>{{5/3/2| date:'d/M/y'}}</b><br/>
+    <b>{{5/3/2| date:'shortTime'}}</b><br>
+    <b>{{ "gfegergh54" | json }}</b>
+    <h1>Percent Pipe</h1>
+    <b>{{00.54565 | percent}}</b>
+    <h1>Slice Pipe</h1>
